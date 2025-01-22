@@ -8,5 +8,52 @@
 <body>
     <p> First program </p>
     <h1> This is second line </h1>
+    <h1> This is Third line </h1>
+    <br> what is this </br>
+    <table>
+        <tr> 
+            <th> Cars </th>
+            <th> Manufacturer </th>
+            <th> Price </th>
+        </tr>
+        <tr>
+            <td> TOYOTA </td>
+            <td> lexus </td>
+            <td> 50000 </td>
+        </tr>
+        <tr>
+            <td> TESLA </td>
+            <td> Model S </td>
+            <td> 70000 </td>
+        </tr>
+        <tr>
+            <td> FORD </td>
+            <td> F150 </td>
+            <td> 90000 </td>
+        </tr>
+        <tr>
+            <td> SUZUKI </td>
+            <td> Maruti </td>
+            <td> 100000 </td>
+        </tr>
+    </table>
+    <div id="imageContainer">
+        <img id="mainImage" src="images/car1.jpg" alt="Image 1" width="500" height="300">
+    </div>
+
+        <button onclick="changeImage()">Next Image</button>
+
+        <script>
+            let currentImageIndex = 0;
+            const images = [
+              "images/Car1.jpg",
+              "images/FORD.jpg" 
+            ];
+          
+            function changeImage() {
+              currentImageIndex = (currentImageIndex + 1) % images.length;
+              document.getElementById("mainImage").src = images[currentImageIndex];
+            }
+          </script>
 </body>
 </html>
