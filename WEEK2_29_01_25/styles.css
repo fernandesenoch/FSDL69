@@ -1,0 +1,57 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the hall ticket */
+.ticket-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Heading styling */
+.ticket-container h1 {
+    text-align: center;
+    color: #1c49df;
+    margin-bottom: 20px;
+}
+
+/* Styling for each detail row */
+.detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Label styling */
+.label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Value styling */
+.value {
+    color: #555;
+}
+
+/* Instructions list styling */
+.value ul {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.value ul li {
+    margin-bottom: 5px;
+}
