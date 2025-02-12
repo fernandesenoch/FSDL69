@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Me Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #startButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #clickMeButton {
+            position: absolute;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="startButton">Start</button>
+    <div id="score">Score: 0</div>
+
+    <script>
+        let score = 0;
+        let timer;
+        const startButton = document.getElementById('startButton');
+        const scoreDisplay = document.getElementById('score');
+        let clickMeButton;
+
+        startButton.addEventListener('click', startGame);
+
+        function startGame() {
+            score = 0;
+            scoreDisplay.textContent = 'Score: 0';
+            startButton.disabled = true;
+
+            // Create the "Click Me" button
+            clickMeButton = document.createElement('button');
+            clickMeButton.id = 'clickMeButton';
+            clickMeButton.textContent = 'Click Me';
+            document.body.appendChild(clickMeButton);
+
+            // Position the button randomly
+            moveButtonRandomly();
+
+            // Start the timer
+            timer = setTimeout(endGame, 10000);
+
+            // Add click event listener to the "Click Me" button
+            clickMeButton.addEventListener('click', incrementScore);
+        }
+
+        function moveButtonRandomly() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            clickMeButton.style.left = `${x}px`;
+            clickMeButton.style.top = `${y}px`;
+        }
+
+        function incrementScore() {
+            score++;
+            scoreDisplay.textContent = `Score: ${score}`;
+            moveButtonRandomly(); // Move the button to a new random position after each click
+        }
+
+        function endGame() {
+            clearTimeout(timer);
+            document.body.removeChild(clickMeButton);
+            startButton.disabled = false;
+            alert(`Time's up! Your final score is: ${score}`);
+        }
+    </script>
+
+</body>
+</html>

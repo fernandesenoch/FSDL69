@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="num1" placeholder="Enter a number"><br><br>
+    <button onclick="factorial()">Factorial</button><br><br>
+    <input type="number" id="num1" placeholder="Enter a number"><br><br>
+    <script>
+        function factorial(n) {
+    if (n < 0) {
+        return "Factorial is not defined for negative numbers.";
+    }
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i; // Multiply result by i for each value from 1 to n
+                                }
+    return result;
+                            }
+    </script>
+</body>
+
+</html>
