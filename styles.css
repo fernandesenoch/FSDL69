@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+.container {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
